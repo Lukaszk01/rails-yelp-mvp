@@ -1,23 +1,17 @@
-index.html.erb
+<p>Create new Restaurant</p>
+<div class="btn btn-light">
+  <%= link_to 'New', new_restaurant_path %>
+</div>
 
+<ul class="list-group text-center">
+  <li class="list-group-item">Resturant list: </li>
 
-
-
-<div class="text-center"><h2>Restaurants</h2></div>
-  <div class="container list-group md-1 text-monospace">
-    <span class=" shadow-sm p-3 mb-5 bg-white rounded text-center">
-
-
-<ul>
   <% @restaurants.each do |restaurant| %>
-  <li>
-      <%= restaurant.name %>
- <%= render 'card', restaurant: restaurant %>
-  </li>
+     <li class="list-group-item list-group-item-primary"> <%= restaurant.name %></li>
+ <li class="list-group-item list-group-item-primary"><%= render 'card', restaurant: restaurant %></li>
 <% end %>
-</ul>
-</span>
 
+</ul>
 
 </div>
-<%= link_to 'New', new_restaurant_path %>
+

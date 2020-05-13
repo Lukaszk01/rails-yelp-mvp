@@ -1,22 +1,24 @@
-show.html.erb
+<%= @restaurant.name %>
 
-<ul>
-  <li><%= @restaurants.name %></li>
-  <li><%= @restaurants.address %></li>
-  <li><%= @restaurants.phone_number %></li>
-  <li>
-<%= @restaurants.category %></li>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action list-group-item-light text-primary"><%= @restaurants.name %></li>
+    <li class="list-group-item list-group-item-action list-group-item-light text-primary"><%= @restaurants.address %></li>
+    <li class="list-group-item list-group-item-action list-group-item-light text-primary"><%= @restaurants.phone_number %></li>
+    <li class="list-group-item list-group-item-action list-group-item-light text-primary"><%= @restaurants.category %></li>
 </ul>
- <%= link_to 'Restaurants', restaurants_path %>
+<div class="btn btn-light">
+  <%= link_to 'Restaurants', restaurants_path %>
+</div>
+
+</div>
 
 
-<h3>Reviews</h3>
+
 <ul class="list-group">
   <% @restaurants.reviews.each do |review| %>
     <li class="list-group-item">
       <div class="d-flex justify-content-between">
         <%= review.content %>
-        <%= link_to "remove", review_path(review), method: :delete, data: { confirm: 'delete?'}  %>
       </div>
     </li>
   <% end %>

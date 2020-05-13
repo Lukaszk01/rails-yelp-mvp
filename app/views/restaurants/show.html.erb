@@ -8,3 +8,18 @@ show.html.erb
 <%= @restaurants.category %></li>
 </ul>
  <%= link_to 'Restaurants', restaurants_path %>
+
+
+<h3>Reviews</h3>
+<ul class="list-group">
+  <% @restaurants.reviews.each do |review| %>
+    <li class="list-group-item">
+      <div class="d-flex justify-content-between">
+        <%= review.content %>
+        <%= link_to "remove", review_path(review), method: :delete, data: { confirm: 'delete?'}  %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New review", new_restaurant_review_path(@restaurants), class: 'btn btn-light'  %>

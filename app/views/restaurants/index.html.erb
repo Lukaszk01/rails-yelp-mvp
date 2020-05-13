@@ -1,0 +1,23 @@
+index.html.erb
+
+
+
+
+<div class="text-center"><h2>Restaurants</h2></div>
+  <div class="container list-group md-1 text-monospace">
+    <span class=" shadow-sm p-3 mb-5 bg-white rounded text-center">
+
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+  <li>
+      <%= restaurant.name %>
+ <%= render 'card', restaurant: restaurant %>
+  </li>
+<% end %>
+</ul>
+</span>
+
+
+</div>
+<%= link_to 'New', new_restaurant_path  %>

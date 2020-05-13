@@ -1,0 +1,10 @@
+show.html.erb
+
+<ul>
+  <li><%= @restaurants.name %></li>
+  <li><%= @restaurants.address %></li>
+  <li><%= @restaurants.phone_number %></li>
+  <li>
+<%= @restaurants.category %></li>
+</ul>
+ <%= link_to 'Restaurants', restaurants_path %>
